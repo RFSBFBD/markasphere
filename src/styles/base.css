@@ -1,0 +1,39 @@
+@import "tailwindcss";
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--color-ivory);
+  color: var(--color-charcoal);
+
+  font-family: "Inter", sans-serif;
+
+  overflow-x: hidden;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body[dir="rtl"] {
+  font-family: "Alexandria", sans-serif;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: white;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  -webkit-user-drag: none;
+  user-select: none;
+  backface-visibility: hidden;
+}
+
+button {
+  cursor: pointer;
+}

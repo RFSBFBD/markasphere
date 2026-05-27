@@ -1,0 +1,82 @@
+/* Cursor Hiding for Fine Pointers (Desktop) */
+@media (pointer: fine) {
+  html.custom-cursor-active,
+  html.custom-cursor-active body,
+  html.custom-cursor-active a,
+  html.custom-cursor-active button,
+  html.custom-cursor-active [role="button"],
+  html.custom-cursor-active input,
+  html.custom-cursor-active select,
+  html.custom-cursor-active textarea {
+    cursor: none !important;
+  }
+}
+
+/* Luxury Hover Motion classes */
+.luxury-btn {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.luxury-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.08);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.luxury-btn:hover {
+  transform: translate3d(0, -2px, 0);
+  box-shadow: 0 12px 30px rgba(91, 108, 255, 0.15);
+}
+
+.luxury-btn:hover::after {
+  opacity: 1;
+}
+
+/* Active Nav Indicator styling */
+.nav-indicator-pill {
+  position: absolute;
+  height: 32px;
+  background: rgba(17, 24, 39, 0.05);
+  border: 1px solid rgba(17, 24, 39, 0.04);
+  border-radius: 9999px;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-theme="dark"] .nav-indicator-pill {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Custom Mobile Menu entrance delays */
+.mobile-menu-item {
+  opacity: 0;
+  transform: translate3d(0, 32px, 0);
+  filter: blur(8px);
+  transition: 
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-menu-active .mobile-menu-item {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  filter: blur(0);
+}
+
+/* CSS Stagger entries */
+.stagger-1 { transition-delay: 100ms; }
+.stagger-2 { transition-delay: 160ms; }
+.stagger-3 { transition-delay: 220ms; }
+.stagger-4 { transition-delay: 280ms; }
+.stagger-5 { transition-delay: 340ms; }
+.stagger-6 { transition-delay: 400ms; }
