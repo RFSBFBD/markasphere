@@ -1,261 +1,69 @@
 <script setup>
 import Reveal from "../animations/Reveal.vue"
-import Magnetic from "../animations/Magnetic.vue"
+import BaseButton from "../ui/BaseButton.vue"
+import { useLanguage } from "../../composables/useLanguage"
+import { getWhatsAppUrl } from "../../config/constants"
+
+const { t } = useLanguage()
 </script>
 
 <template>
-
   <section
-    class="relative min-h-screen overflow-hidden flex items-center px-6 pt-32"
+    class="relative w-full min-h-[90vh] flex flex-col items-center justify-center bg-[var(--color-bg)] text-[var(--color-text)] px-6 py-24 md:py-36 text-center select-none"
   >
+    <div class="absolute inset-0 grid-lines opacity-[0.03] pointer-events-none" />
 
-    <!-- Background Gradient -->
-    <div class="hero-gradient absolute inset-0" />
-
-    <!-- Glow Orb 1 -->
-    <div class="hero-orb orb-1" />
-
-    <!-- Glow Orb 2 -->
-    <div class="hero-orb orb-2" />
-
-    <!-- Noise Layer -->
-    <div class="noise-layer absolute inset-0 opacity-[0.03]" />
-
-    <div
-      class="relative z-10 max-w-7xl mx-auto w-full"
-    >
-
-      <Reveal>
-        <div
-          class="grid lg:grid-cols-2 gap-20 items-center"
+    <div class="relative z-10 max-w-5xl mx-auto flex flex-col items-center">
+      <Reveal :delay="100">
+        <span
+          class="inline-flex border border-[var(--color-border)] px-4 py-1.5 text-small font-semibold uppercase tracking-[0.2em] mb-16 text-[var(--color-muted)]"
         >
-
-        <!-- LEFT CONTENT -->
-        <div>
-
-          <!-- Badge -->
-          <div
-            class="inline-flex glass rounded-full px-5 py-2 text-sm text-white/80 mb-8"
-          >
-            Strategic Executive Brand Presence
-          </div>
-
-          <!-- Heading -->
-          <h1
-            class="text-white text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.02]"
-          >
-            Some brands are understood
-            before they speak.
-          </h1>
-
-          <!-- Description -->
-          <p
-            class="mt-8 text-lg leading-relaxed text-white/70 max-w-xl"
-          >
-            MarkaSphere builds strategic digital presence
-            designed to shape authority, perception,
-            and premium positioning across modern platforms.
-          </p>
-
-          <!-- CTA -->
-          <div
-            class="flex flex-wrap items-center gap-4 mt-10"
-          >
-
-            <Magnetic>
-              <button
-                class="bg-white text-executive px-7 py-4 rounded-[14px] font-medium luxury-btn transition-all duration-500"
-              >
-                Book Consultation
-              </button>
-            </Magnetic>
-
-            <Magnetic>
-              <button
-                class="glass text-white px-7 py-4 rounded-[14px] luxury-btn transition-all duration-500"
-              >
-                Explore Work
-              </button>
-            </Magnetic>
-
-          </div>
-
-        </div>
-
-        <!-- RIGHT SIDE -->
-        <div
-          class="relative hidden lg:flex justify-center"
-        >
-
-          <!-- Main Glass Card -->
-          <div
-            class="glass hero-card p-8 w-[480px]"
-          >
-
-            <div
-              class="flex items-center justify-between mb-8"
-            >
-
-              <div>
-                <p class="text-white/60 text-sm">
-                  Strategic Presence
-                </p>
-
-                <h3
-                  class="text-white text-2xl font-semibold mt-2"
-                >
-                  MarkaSphere
-                </h3>
-              </div>
-
-              <div
-                class="size-14 rounded-2xl bg-white/10 flex items-center justify-center text-white text-xl"
-              >
-                ✦
-              </div>
-
-            </div>
-
-            <!-- Fake Analytics -->
-            <div class="space-y-5">
-
-              <div
-                class="glass rounded-2xl p-5"
-              >
-                <div
-                  class="flex items-center justify-between"
-                >
-
-                  <div>
-                    <p class="text-white/50 text-sm">
-                      Brand Authority
-                    </p>
-
-                    <h4
-                      class="text-white text-3xl font-semibold mt-2"
-                    >
-                      +87%
-                    </h4>
-                  </div>
-
-                  <div
-                    class="w-20 h-20 rounded-full border border-white/10 flex items-center justify-center text-white/70"
-                  >
-                    ↑
-                  </div>
-
-                </div>
-              </div>
-
-              <div
-                class="grid grid-cols-2 gap-5"
-              >
-
-                <div
-                  class="glass rounded-2xl p-5"
-                >
-                  <p class="text-white/50 text-sm">
-                    Engagement
-                  </p>
-
-                  <h4
-                    class="text-white text-2xl font-semibold mt-3"
-                  >
-                    4.8x
-                  </h4>
-                </div>
-
-                <div
-                  class="glass rounded-2xl p-5"
-                >
-                  <p class="text-white/50 text-sm">
-                    Positioning
-                  </p>
-
-                  <h4
-                    class="text-white text-2xl font-semibold mt-3"
-                  >
-                    Premium
-                  </h4>
-                </div>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
+          {{ t.home.heroBadge }}
+        </span>
       </Reveal>
 
+      <Reveal :delay="250">
+        <h1
+          class="text-h1 whitespace-pre-line text-[var(--color-text)]"
+        >
+          {{ t.home.heroTitle }}
+        </h1>
+      </Reveal>
+
+      <Reveal :delay="400">
+        <p
+          class="mt-12 text-body text-[var(--color-muted)] max-w-3xl"
+        >
+          {{ t.home.heroDesc }}
+        </p>
+      </Reveal>
+
+      <Reveal :delay="550">
+        <div class="flex flex-wrap items-center justify-center gap-4 md:gap-6 mt-14">
+          <BaseButton variant="primary" :href="getWhatsAppUrl('أرغب في بدء مشروع')">
+            {{ t.home.heroCtaPrimary }}
+          </BaseButton>
+
+          <BaseButton variant="secondary" to="/work">
+            {{ t.home.heroCtaSecondary }}
+          </BaseButton>
+        </div>
+      </Reveal>
     </div>
 
+    <Reveal :delay="700">
+      <div class="mt-24 text-[var(--color-text)]/20 text-xl font-light">
+        ✦
+      </div>
+    </Reveal>
   </section>
-
 </template>
 
 <style scoped>
-
-.hero-gradient {
-
-  background:
-    linear-gradient(
-      135deg,
-      #111827 0%,
-      #1A2433 45%,
-      #2A3441 100%
-    );
-}
-
-.hero-orb {
-
-  position: absolute;
-
-  border-radius: 999px;
-
-  filter: blur(120px);
-
-  opacity: 0.18;
-}
-
-.orb-1 {
-
-  width: 420px;
-  height: 420px;
-
-  background: #5B6CFF;
-
-  top: -100px;
-  left: -100px;
-}
-
-.orb-2 {
-
-  width: 320px;
-  height: 320px;
-
-  background: #7483FF;
-
-  bottom: -80px;
-  right: -80px;
-}
-
-.hero-card {
-
-  border-radius: 32px;
-}
-
-.noise-layer {
-
+.grid-lines {
+  background-size: 80px 80px;
   background-image:
-    radial-gradient(
-      rgba(255,255,255,0.4) 1px,
-      transparent 1px
-    );
-
-  background-size: 24px 24px;
+    linear-gradient(to right, var(--color-text) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-text) 1px, transparent 1px);
 }
-
 </style>

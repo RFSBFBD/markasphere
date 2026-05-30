@@ -2,16 +2,17 @@
   <div
     v-if="showCursor"
     class="custom-cursor-wrapper pointer-events-none fixed inset-0 z-[9999]"
+    aria-hidden="true"
   >
     <!-- Center Dot -->
     <div
-      class="cursor-dot fixed left-0 top-0 size-1.5 rounded-full bg-accent"
+      class="cursor-dot fixed left-0 top-0 size-1.5 rounded-full bg-[var(--color-text)]"
       :style="dotStyle"
     />
 
     <!-- Outer Follower Ring -->
     <div
-      class="cursor-ring fixed left-0 top-0 rounded-full border border-accent/60 flex items-center justify-center text-[10px] font-medium tracking-widest text-white uppercase select-none transition-all duration-300 ease-out"
+      class="cursor-ring fixed left-0 top-0 rounded-full border border-[var(--color-text)]/40 flex items-center justify-center text-[10px] font-medium tracking-widest text-[var(--color-bg)] uppercase select-none transition-all duration-300 ease-out"
       :class="ringClasses"
       :style="ringStyle"
     >
@@ -173,16 +174,16 @@ onBeforeUnmount(() => {
 .cursor-ring.is-hovering {
   width: 48px;
   height: 48px;
-  border-color: rgba(91, 108, 255, 0.9);
-  background-color: rgba(91, 108, 255, 0.05);
+  border-color: var(--color-text);
+  background-color: rgba(17, 22, 34, 0.03);
 }
 
 .cursor-ring.has-text {
   width: 72px;
   height: 72px;
-  background-color: var(--color-executive, #111827);
+  background-color: var(--color-text);
   border-color: transparent;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0 1px var(--color-border);
 }
 
 /* Click Animation scale down */

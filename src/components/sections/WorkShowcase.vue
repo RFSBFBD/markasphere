@@ -1,7 +1,7 @@
 <template>
 
   <section
-    class="py-32 px-6 bg-[#EEF1F5]"
+    class="py-32 px-6 bg-[var(--color-surface-secondary)]"
   >
 
     <div class="max-w-7xl mx-auto">
@@ -18,51 +18,54 @@
         "
       >
 
-        <div class="max-w-3xl">
+        <Reveal>
+          <div class="max-w-3xl">
 
-          <span
+            <span
+              class="
+                inline-flex
+                glass
+                rounded-full
+                px-4
+                py-2
+                text-sm
+                mb-6
+              "
+            >
+              {{ t.home.workBadge }}
+            </span>
+
+            <h2
+              class="
+                text-5xl
+                lg:text-6xl
+                font-semibold
+                tracking-tight
+                leading-[1.05]
+                text-charcoal
+              "
+            >
+              {{ t.home.workTitle }}
+            </h2>
+
+          </div>
+        </Reveal>
+
+        <Reveal :delay="150">
+          <RouterLink
+            to="/work"
             class="
               inline-flex
-              glass
-              rounded-full
-              px-4
-              py-2
-              text-sm
-              mb-6
-            "
-          >
-            Selected Work
-          </span>
-
-          <h2
-            class="
-              text-5xl
-              lg:text-6xl
-              font-semibold
-              tracking-tight
-              leading-[1.05]
+              items-center
+              gap-3
               text-charcoal
+              font-medium
             "
           >
-            Strategic digital experiences
-            designed to shape perception.
-          </h2>
-
-        </div>
-
-        <RouterLink
-          to="/work"
-          class="
-            inline-flex
-            items-center
-            gap-3
-            text-charcoal
-            font-medium
-          "
-        >
-          Explore All Work
-          <span>→</span>
-        </RouterLink>
+            {{ t.layout.exploreAll }}
+            <span>→</span>
+          </RouterLink>
+        </Reveal>
 
       </div>
 
@@ -77,7 +80,7 @@
       >
 
         <ProjectCard
-          v-for="project in projects"
+          v-for="project in translatedProjects"
           :key="project.slug"
           :project="project"
         />
@@ -91,11 +94,26 @@
 </template>
 
 <script setup>
+import { computed } from "vue"
+import { projects } from "../../data/projects"
+import ProjectCard from "../cards/ProjectCard.vue"
+import { useLanguage } from "../../composables/useLanguage"
+import Reveal from "../animations/Reveal.vue"
 
-import { projects }
-from "../../data/projects"
+const { t } = useLanguage()
 
-import ProjectCard
-from "../cards/ProjectCard.vue"
-
+const translatedProjects = computed(() => {
+  return projects.map(project => {
+    const translation = t.value.projects[project.slug]
+    if (translation) {
+      return {
+        ...project,
+        title: translation.title,
+        category: translation.category,
+        description: translation.description
+      }
+    }
+    return project
+  })
+})
 </script>

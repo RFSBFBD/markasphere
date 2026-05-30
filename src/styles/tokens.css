@@ -1,35 +1,101 @@
 :root {
+  /* ── COLOR SYSTEM: LIGHT ── */
+  --color-bg:          #F5F6F7;
+  --color-surface:     #FFFFFF;
+  --color-text:        #1C1E22;
+  --color-muted:       #2A3441;
+  --color-border:      #D6D9DF;
+  --color-accent:      #5B6CFF;
 
-  /* COLORS */
-  --color-executive: #111827;
-  --color-ivory: #F5F6F7;
-  --color-charcoal: #1C1E22;
-  --color-accent: #5B6CFF;
-  --color-silver: #D6D9DF;
-  --color-slate: #2A3441;
+  --color-text-rgb:    28, 30, 34;
 
-  /* GLASS */
-  --glass-bg:
-    rgba(255,255,255,0.72);
+  --surface-primary:   var(--color-surface);
+  --surface-secondary: #F0F1F3;
 
-  --glass-border:
-    rgba(255,255,255,0.45);
+  /* ── TYPOGRAPHY SCALE ── */
+  --text-h1:   56px;
+  --text-h2:   36px;
+  --text-h3:   22px;
+  --text-body: 16px;
+  --text-small: 13px;
 
-  --glass-blur: 16px;
+  --font-primary:  "Inter", sans-serif;
+  --font-arabic:   "Alexandria", sans-serif;
 
-  /* SHADOWS */
-  --shadow-soft:
-    0 4px 20px rgba(17,24,39,0.04);
+  --leading-h1:    1.1;
+  --leading-h2:    1.2;
+  --leading-h3:    1.4;
+  --leading-body:  1.7;
+  --leading-small: 1.6;
 
-  --shadow-premium:
-    0 12px 40px rgba(17,24,39,0.08);
+  /* ── SPACING SYSTEM ── */
+  --space-xs:   4px;
+  --space-sm:   8px;
+  --space-md:   16px;
+  --space-lg:   24px;
+  --space-xl:   32px;
+  --space-2xl:  48px;
+  --space-3xl:  64px;
+  --space-4xl:  80px;
+  --space-5xl:  120px;
+  --space-6xl:  160px;
 
-  /* RADIUS */
-  --radius-card: 24px;
-  --radius-button: 14px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
 
-  /* TRANSITIONS */
-  --transition-premium:
-    0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  /* ── SHADOWS ── */
+  --shadow-soft:   0 2px 16px rgba(28, 30, 34, 0.04);
+  --shadow-depth:  0 8px 32px rgba(28, 30, 34, 0.06);
+  --shadow-lift:   0 12px 40px rgba(28, 30, 34, 0.08);
 
+  /* ── MOTION ── */
+  --transition-fast:   200ms cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-calm:   350ms cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-slow:   600ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* ── GLASS ── */
+  --glass-bg:     rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(214, 217, 223, 0.5);
+  --glass-blur:   16px;
+
+  /* ── BACKWARDS COMPATIBILITY ALIASES ── */
+  --color-executive:       var(--color-text);
+  --color-ivory:           var(--color-bg);
+  --color-charcoal:        var(--color-text);
+  --color-silver:          var(--color-border);
+  --color-slate:           var(--color-muted);
+  --color-surface-secondary: var(--surface-secondary);
+  --shadow-premium:        var(--shadow-depth);
+  --transition-premium:    var(--transition-slow);
+}
+
+/* ── COLOR SYSTEM: DARK ── */
+html[data-theme="dark"] {
+  --color-bg:          #111827;
+  --color-surface:     #1A2433;
+  --color-text:        #F5F6F7;
+  --color-muted:       #D6D9DF;
+  --color-border:      #2A3441;
+  --color-accent:      #5B6CFF;
+
+  --color-text-rgb:    245, 246, 247;
+
+  --surface-primary:   var(--color-surface);
+  --surface-secondary: #2A3441;
+
+  --glass-bg:     rgba(26, 36, 51, 0.85);
+  --glass-border: rgba(42, 52, 65, 0.5);
+
+  --shadow-soft:   0 2px 16px rgba(0, 0, 0, 0.2);
+  --shadow-depth:  0 8px 32px rgba(0, 0, 0, 0.3);
+  --shadow-lift:   0 12px 40px rgba(0, 0, 0, 0.35);
+
+  --color-slate:  var(--color-muted);
+}
+
+/* ── ARABIC FONT ── */
+html[lang="ar"] {
+  --font-primary: var(--font-arabic);
 }

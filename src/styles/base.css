@@ -1,24 +1,59 @@
 @import "tailwindcss";
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
-body {
-  background: var(--color-ivory);
-  color: var(--color-charcoal);
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 1000;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-size: var(--text-small);
+  font-weight: 600;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  text-decoration: none;
+  transition: top var(--transition-fast);
+}
 
-  font-family: "Inter", sans-serif;
+.skip-link:focus {
+  top: 0;
+}
+
+*:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+
+  font-family: var(--font-primary);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
 
   overflow-x: hidden;
-
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+body, header, section, button, a, h1, h2, h3, h4, p, span, li, nav, div, article, aside, footer {
+  transition: background-color var(--transition-slow),
+              color var(--transition-slow),
+              border-color var(--transition-slow),
+              backdrop-filter var(--transition-slow),
+              box-shadow var(--transition-slow);
+}
+
 body[dir="rtl"] {
-  font-family: "Alexandria", sans-serif;
+  font-family: var(--font-arabic);
 }
 
 ::selection {
@@ -36,4 +71,63 @@ img {
 
 button {
   cursor: pointer;
+}
+
+/* ── TYPOGRAPHY UTILITY CLASSES ── */
+.text-h1 {
+  font-size: clamp(2rem, 5vw, var(--text-h1));
+  line-height: var(--leading-h1);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+}
+
+.text-h2 {
+  font-size: clamp(1.5rem, 3.5vw, var(--text-h2));
+  line-height: var(--leading-h2);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.text-h3 {
+  font-size: clamp(1.125rem, 2.5vw, var(--text-h3));
+  line-height: var(--leading-h3);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.text-body {
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  font-weight: 400;
+}
+
+.text-small {
+  font-size: var(--text-small);
+  line-height: var(--leading-small);
+  font-weight: 400;
+}
+
+/* ── SECTION SPACING ── */
+.section-pad {
+  padding-block: var(--space-5xl);
+}
+
+@media (width < 768px) {
+  .section-pad {
+    padding-block: var(--space-4xl);
+  }
+}
+
+/* ── CONTAINER ── */
+.container-premium {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: var(--space-lg);
+}
+
+@media (width >= 768px) {
+  .container-premium {
+    padding-inline: var(--space-2xl);
+  }
 }
