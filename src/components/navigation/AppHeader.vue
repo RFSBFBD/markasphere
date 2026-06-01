@@ -70,8 +70,8 @@ onBeforeUnmount(() => {
 .brand-name {
   font-size: 1.1rem;
   letter-spacing: -0.02em;
-  /* Explicitly use primary font for brand name - never translates or changes */
-  font-family: var(--font-primary);
+  /* Explicitly use Canela Condensed for brand name only */
+  font-family: "Canela Condensed", var(--font-primary);
   font-weight: 600;
   text-transform: none;
   direction: ltr; /* Force LTR for brand name */

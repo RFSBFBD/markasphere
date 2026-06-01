@@ -9,18 +9,6 @@
           <p class="text-small text-[var(--color-muted)] max-w-md">
             {{ t.layout.footerDesc }}
           </p>
-          <div class="flex items-center gap-4 pt-2">
-            <span class="text-xs uppercase tracking-[0.1em] text-[var(--color-muted)]">{{ t.layout.followUs }}</span>
-            <a href="https://linkedin.com/company/markasphere" target="_blank" rel="noopener noreferrer" class="text-[var(--color-muted)] hover:text-[var(--color-accent)] transition" aria-label="LinkedIn">
-              <svg class="size-4" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </a>
-            <a href="https://twitter.com/markasphere" target="_blank" rel="noopener noreferrer" class="text-[var(--color-muted)] hover:text-[var(--color-accent)] transition" aria-label="Twitter">
-              <svg class="size-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            </a>
-            <a href="https://instagram.com/markasphere" target="_blank" rel="noopener noreferrer" class="text-[var(--color-muted)] hover:text-[var(--color-accent)] transition" aria-label="Instagram">
-              <svg class="size-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-            </a>
-          </div>
         </div>
 
         <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
@@ -68,6 +56,56 @@
                 {{ t.layout.whatsappButton }}
               </a>
             </div>
+            <div class="space-y-4 pt-4">
+              <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--color-muted)]">Social Links</h3>
+              <div class="flex flex-wrap items-center gap-3">
+                <a
+                  href="https://www.tiktok.com/@markasphere"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="TikTok"
+                  class="social-link"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.04c-1.64 0-3.1.56-4.29 1.48v3.6c.9-.76 2.01-1.22 3.16-1.22.87 0 1.68.23 2.38.64v4.31c-1.38-.08-2.57-.65-3.38-1.55-.67-.75-1.04-1.7-1.04-2.71V3.7C7.05 3.2 9.44 2 12 2c1.06 0 2.07.23 2.96.64v3.6c-.62-.27-1.3-.42-2-.42-.9 0-1.75.2-2.5.56v4.05c.86.57 1.92.89 3.01.89 1.08 0 2.14-.33 3.02-.95v4.6c-1.1.88-2.44 1.38-3.85 1.38-3.32 0-6.01-2.69-6.01-6.01 0-3.32 2.69-6.01 6.01-6.01 1.03 0 2.01.27 2.86.76V2.04H12z"/></svg>
+                </a>
+                <a
+                  href="https://x.com/markasphere"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="X"
+                  class="social-link"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.46 6.01c-.77.34-1.6.56-2.48.66.89-.53 1.57-1.38 1.88-2.38-.83.49-1.75.84-2.72 1.03-.78-.83-1.89-1.35-3.12-1.35-2.36 0-4.27 1.91-4.27 4.27 0 .34.04.67.11.99-3.55-.18-6.7-1.88-8.8-4.46-.37.63-.58 1.36-.58 2.13 0 1.47.75 2.77 1.9 3.53-.7-.02-1.36-.21-1.94-.53v.05c0 2.06 1.47 3.78 3.42 4.17-.36.1-.75.15-1.15.15-.28 0-.55-.03-.81-.08.55 1.72 2.15 2.97 4.04 3.01-1.48 1.16-3.34 1.85-5.36 1.85-.35 0-.7-.02-1.04-.06 1.92 1.23 4.2 1.96 6.65 1.96 7.98 0 12.34-6.62 12.34-12.35 0-.19-.01-.38-.01-.57.85-.61 1.58-1.37 2.16-2.24z"/></svg>
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/markasphere"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  class="social-link"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 24h4V7H.5v17zM8.5 7h3.75v2.17h.05c.52-.99 1.8-2.03 3.7-2.03 3.96 0 4.7 2.6 4.7 5.97V24h-4v-8.27c0-1.97-.04-4.51-2.75-4.51-2.75 0-3.17 2.14-3.17 4.36V24h-4V7z"/></svg>
+                </a>
+                <a
+                  href="https://www.instagram.com/markasphere/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  class="social-link"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.584.012 4.85.07 1.17.055 1.98.242 2.44.404a4.92 4.92 0 011.71 1.112 4.92 4.92 0 011.112 1.71c.162.46.35 1.27.404 2.44.058 1.266.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.055 1.17-.242 1.98-.404 2.44a4.92 4.92 0 01-1.112 1.71 4.92 4.92 0 01-1.71 1.112c-.46.162-1.27.35-2.44.404-1.266.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.055-1.98-.242-2.44-.404a4.92 4.92 0 01-1.71-1.112 4.92 4.92 0 01-1.112-1.71c-.162-.46-.35-1.27-.404-2.44C2.172 15.584 2.16 15.2 2.16 12s.012-3.584.07-4.85c.055-1.17.242-1.98.404-2.44a4.92 4.92 0 011.112-1.71A4.92 4.92 0 015.386 2.63c.46-.162 1.27-.35 2.44-.404C8.416 2.172 8.8 2.16 12 2.16zm0 1.838c-3.163 0-3.54.01-4.788.069-.998.045-1.537.207-1.896.345a3.08 3.08 0 00-1.116.725 3.08 3.08 0 00-.725 1.116c-.138.359-.3.898-.345 1.896-.059 1.248-.069 1.625-.069 4.788s.01 3.54.069 4.788c.045.998.207 1.537.345 1.896.17.446.47.846.725 1.116.27.255.67.555 1.116.725.359.138.898.3 1.896.345 1.248.059 1.625.069 4.788.069s3.54-.01 4.788-.069c.998-.045 1.537-.207 1.896-.345a3.08 3.08 0 001.116-.725 3.08 3.08 0 00.725-1.116c.138-.359.3-.898.345-1.896.059-1.248.069-1.625.069-4.788s-.01-3.54-.069-4.788c-.045-.998-.207-1.537-.345-1.896a3.08 3.08 0 00-.725-1.116 3.08 3.08 0 00-1.116-.725c-.359-.138-.898-.3-1.896-.345-1.248-.059-1.625-.069-4.788-.069zm0 4.5a5.5 5.5 0 110 11 5.5 5.5 0 010-11zm0 1.838a3.662 3.662 0 100 7.323 3.662 3.662 0 000-7.323zm4.908-1.941a1.288 1.288 0 11-2.575 0 1.288 1.288 0 012.575 0z"/></svg>
+                </a>
+                <a
+                  href="https://www.facebook.com/markasphere/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  class="social-link"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22.675 0H1.326C.594 0 0 .593 0 1.326v21.348C0 23.407.594 24 1.326 24H12.82V14.708h-3.1V11.08h3.1V8.414c0-3.066 1.872-4.735 4.604-4.735 1.31 0 2.436.097 2.762.14v3.205l-1.897.001c-1.49 0-1.777.708-1.777 1.747v2.29h3.554l-.463 3.628h-3.091V24h6.063C23.406 24 24 23.407 24 22.674V1.326C24 .593 23.406 0 22.675 0z"/></svg>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -103,10 +141,33 @@ const scrollToTop = () => {
 
 <style scoped>
 .brand-name {
-  /* Explicitly use primary font for brand name - never translates or changes */
-  font-family: var(--font-primary);
+  /* Explicitly use Canela Condensed for brand name only */
+  font-family: "Canela Condensed", var(--font-primary);
   font-weight: 600;
   text-transform: none;
   direction: ltr; /* Force LTR for brand name */
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 9999px;
+  border: 1px solid var(--color-border);
+  color: var(--color-muted);
+  transition: transform 220ms ease, color 220ms ease, border-color 220ms ease, background-color 220ms ease;
+}
+
+.social-link:hover {
+  color: #5B6CFF;
+  border-color: #5B6CFF;
+  transform: translateY(-2px);
+}
+
+.social-link svg {
+  width: 22px;
+  height: 22px;
 }
 </style>
