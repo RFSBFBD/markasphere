@@ -152,25 +152,29 @@
 <script setup>
 import { ref, computed, onMounted, watch } from "vue"
 import { useHead } from "@unhead/vue"
-import { SITE_URL } from "../config/constants"
+import { SITE_URL, getWhatsAppUrl } from "../config/constants"
 import { useLanguage } from "../composables/useLanguage"
-import { getWhatsAppUrl } from "../config/constants"
 
 const STORAGE_KEY = "markasphere_contact_draft"
 
 const { t } = useLanguage()
 
-useHead({
-  title: "MarkaSphere | Contact Us",
-  meta: [
-    { name: "description", content: "Get in touch with MarkaSphere. Discuss your brand project with our team." },
-    { property: "og:title", content: "MarkaSphere | Contact Us" },
-    { property: "og:description", content: "Get in touch with MarkaSphere. Discuss your brand project with our team." },
-    { property: "og:url", content: SITE_URL + "/contact" },
-    { name: "twitter:title", content: "MarkaSphere | Contact Us" },
-    { name: "twitter:description", content: "Get in touch with MarkaSphere. Discuss your brand project with our team." }
-  ],
-  link: [{ rel: "canonical", href: SITE_URL + "/contact" }]
+useHead(() => {
+  const title = t.value?.layout?.contactPageTitle || "Contact | MarkaSphere"
+  const description = t.value?.layout?.contactMetaDesc || "Get in touch with MarkaSphere. Discuss your brand project with our team."
+
+  return {
+    title,
+    meta: [
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:url", content: SITE_URL + "/contact" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description }
+    ],
+    link: [{ rel: "canonical", href: SITE_URL + "/contact" }]
+  }
 })
 
 const formSection = ref(null)

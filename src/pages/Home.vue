@@ -29,6 +29,7 @@
 <script setup>
 import { useHead } from "@unhead/vue"
 import { SITE_URL } from "../config/constants"
+import { useLanguage } from "../composables/useLanguage"
 
 import HeroSection
 from "../components/sections/HeroSection.vue"
@@ -66,16 +67,23 @@ from "../components/sections/CTABanner.vue"
 import FAQSection
 from "../components/sections/FAQSection.vue"
 
-useHead({
-  title: "MarkaSphere | Premium Brand Agency",
-  meta: [
-    { name: "description", content: "Premium brand identity agency crafting strategic visual ecosystems and digital experiences for executive brands." },
-    { property: "og:title", content: "MarkaSphere | Premium Brand Agency" },
-    { property: "og:description", content: "Premium brand identity agency crafting strategic visual ecosystems and digital experiences for executive brands." },
-    { property: "og:url", content: SITE_URL + "/" },
-    { name: "twitter:title", content: "MarkaSphere | Premium Brand Agency" },
-    { name: "twitter:description", content: "Premium brand identity agency crafting strategic visual ecosystems and digital experiences for executive brands." }
-  ],
-  link: [{ rel: "canonical", href: SITE_URL + "/" }]
+const { t } = useLanguage()
+
+useHead(() => {
+  const title = t.value?.layout?.metaTitle || "MarkaSphere | Premium Brand Agency"
+  const description = t.value?.layout?.metaDesc || "Premium brand identity agency crafting strategic visual ecosystems and digital experiences for executive brands."
+
+  return {
+    title,
+    meta: [
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:url", content: SITE_URL + "/" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description }
+    ],
+    link: [{ rel: "canonical", href: SITE_URL + "/" }]
+  }
 })
 </script>

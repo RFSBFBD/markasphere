@@ -89,13 +89,13 @@
               
               <!-- WhatsApp CTA Button -->
               <a
-                :href="getWhatsAppUrl('أرغب في طلب خدمة ' + service.title)"
+                :href="getWhatsAppUrl(t.home.whatsappServicePrefix + service.title)"
                 target="_blank"
                 rel="noopener noreferrer"
-                :aria-label="`Request ${service.title} service via WhatsApp`"
+                :aria-label="t.home.whatsappButtonAria"
                 class="text-xs font-semibold uppercase tracking-[0.1em] text-[var(--color-text)]/60 hover:text-[var(--color-text)] transition-colors duration-300 focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-[var(--color-text)] focus:rounded"
               >
-                Request Service →
+                {{ t.home.requestServiceLabel }}
               </a>
             </div>
 

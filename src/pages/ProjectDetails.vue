@@ -208,7 +208,7 @@ import { computed } from "vue"
 import { useRoute } from "vue-router"
 import { useHead } from "@unhead/vue"
 import { SITE_URL } from "../config/constants"
-import { projects } from "../data/projects"
+import { projects } from "../content/data/projects"
 import Reveal from "../components/animations/Reveal.vue"
 import { useLanguage } from "../composables/useLanguage"
 

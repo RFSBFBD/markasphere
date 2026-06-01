@@ -1,7 +1,10 @@
 export default {
   insights: {
+    metaTitle: "المقالات | MarkaSphere",
+    metaDesc: "مقالات استراتيجية حول إدراك العلامة التجارية، وطريقة العرض، وتموضع السوق المتميز.",
     heroTitle: "رؤى حول العلامات التجارية، وطريقة ظهورها داخل السوق.",
     heroBody: "طريقة الظهور… تؤثر على الفهم، والثقة، والانطباع، واتخاذ القرار.",
+    readMore: "اقرأ المزيد",
     articles: [
       {
         slug: "why-some-companies-appear-larger",

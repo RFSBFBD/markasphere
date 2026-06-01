@@ -1,5 +1,5 @@
 <template>
-  <Reveal>
+  <Reveal :delay="staggerDelay">
     <RouterLink
       :to="`/work/${project.slug}`"
       class="project-card-link group block"
@@ -62,10 +62,19 @@ const { t } = useLanguage()
 
 const props = defineProps({
   project: Object,
+  staggerIndex: {
+    type: Number,
+    default: 0
+  }
 })
 
 const categoryLabel = computed(() => {
   return t.value?.projects?.categoryLabels?.[props.project.category] || props.project.category
+})
+
+const staggerDelay = computed(() => {
+  // Stagger interval: 60ms between cards
+  return 100 + props.staggerIndex * 60
 })
 </script>
 

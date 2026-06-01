@@ -31,7 +31,7 @@ const { t } = useLanguage()
                 {{ article.title }}
               </h2>
               <span class="inline-flex mt-4 text-sm font-medium text-[var(--color-accent)] items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                Read More
+                {{ t.insights.readMore }}
                 <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>

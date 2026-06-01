@@ -1,6 +1,6 @@
 export default {
   layout: {
-    logo: "ماركاسفير",
+    logo: "MarkaSphere",
     home: "الرئيسية",
     services: "خدماتنا",
     work: "المشاريع",
@@ -12,6 +12,31 @@ export default {
     backToServices: "العودة إلى الخدمات",
     navToggleLabel: "تبديل اللغة",
     themeToggleLabel: "تبديل الوضع",
-    ctaButton: "ابدأ مشروعك"
+    menuToggleLabel: "تبديل القائمة",
+    whatsappConsultationMessage: "أرغب في استشارة",
+    ctaButton: "ابدأ مشروعك",
+    // Footer translations
+    followUs: "تابعنا",
+    quickLinks: "روابط سريعة",
+    footerServices: "خدماتنا",
+    getInTouch: "تواصل معنا",
+    footerDesc: "نحن نصنع تجارب رقمية متميزة تركز على الوضوح والأداء والتأثير.",
+    servicesDesc: "تصميم واجهات المستخدم، تطوير الويب، وتحسين الأداء لرحلات مستخدم لا تُنسى.",
+    touchDesc: "دعونا نناقش مشروعك ونأخذ علامتك التجارية إلى المستوى التالي.",
+    footerCopyright: "جميع الحقوق محفوظة.",
+    footerCredit: "صُممت وطورت بواسطة MarkaSphere",
+    whatsappButton: "واتساب",
+    aboutPageTitle: "من نحن | MarkaSphere",
+    aboutMetaDesc: "تعرف على ماركاسفير — وكالة علامة تجارية تركز على الوضوح، والموقع الاستراتيجي، والتجارب الرقمية الراقية.",
+    servicesPageTitle: "خدماتنا | MarkaSphere",
+    servicesMetaDesc: "اكتشف خدمات ماركاسفير: الهوية البصرية، تطوير المواقع، وسائل التواصل الاجتماعي، تحرير الفيديو، وحلول التسويق.",
+    portfolioPageTitle: "محفظة | MarkaSphere",
+    portfolioMetaDesc: "عرض محفظة ماركاسفير من أنظمة الهوية البصرية المميزة والمواقع الرقمية وتجارب العلامة التجارية.",
+    insightsPageTitle: "المقالات | MarkaSphere",
+    insightsMetaDesc: "رؤى حول تصور العلامة التجارية والاستراتيجية البصرية والحضور الرقمي من ماركاسفير.",
+    contactPageTitle: "تواصل | MarkaSphere",
+    contactMetaDesc: "تواصل مع ماركاسفير لمناقشة مشروع علامتك التجارية مع فريقنا.",
+    notFoundPageTitle: "الصفحة غير موجودة | MarkaSphere",
+    notFoundMetaDesc: "الصفحة التي تبحث عنها غير موجودة. عد إلى الصفحة الرئيسية لماركاسفير."
   }
 }

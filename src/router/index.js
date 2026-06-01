@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from "vue-router"
+import { createRouter, createWebHashHistory } from "vue-router"
 
 const routes = [
   { path: "/", name: "Home", component: () => import("../pages/Home.vue"), meta: { keepAlive: true } },
@@ -10,6 +10,7 @@ const routes = [
   { path: "/work", name: "Work", component: () => import("../pages/Work.vue"), meta: { keepAlive: true } },
   { path: "/work/:slug", name: "ProjectDetails", component: () => import("../pages/ProjectDetails.vue") },
   { path: "/contact", name: "Contact", component: () => import("../pages/Contact.vue") },
+  { path: "/:pathMatch(.*)*", name: "NotFound", component: () => import("../pages/NotFound.vue") }
 ]
 
 // Export lightweight mapping for route prefetching (used by nav hover/touch)
@@ -23,10 +24,11 @@ export const routeImporters = {
 }
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes,
-  scrollBehavior() {
-    return { top: 0 }
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) return savedPosition
+    return { left: 0, top: 0 }
   },
 })
 

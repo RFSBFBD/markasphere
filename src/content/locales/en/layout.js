@@ -12,6 +12,31 @@ export default {
     backToServices: "Back to Services",
     navToggleLabel: "Toggle Language",
     themeToggleLabel: "Toggle Theme",
-    ctaButton: "Start Your Project"
+    menuToggleLabel: "Toggle Menu",
+    whatsappConsultationMessage: "I would like a consultation",
+    ctaButton: "Start Your Project",
+    // Footer translations
+    followUs: "Follow us",
+    quickLinks: "Quick Links",
+    footerServices: "Services",
+    getInTouch: "Get in Touch",
+    footerDesc: "We craft premium digital experiences that focus on clarity, performance, and impact.",
+    servicesDesc: "UI design, web development, and performance optimization for memorable user journeys.",
+    touchDesc: "Let's discuss your project and take your brand to the next level.",
+    footerCopyright: "All rights reserved.",
+    footerCredit: "Designed and developed by MarkaSphere",
+    whatsappButton: "WhatsApp",
+    aboutPageTitle: "About | MarkaSphere",
+    aboutMetaDesc: "Learn about MarkaSphere — a brand agency focused on visual clarity, strategic positioning, and premium digital experiences.",
+    servicesPageTitle: "Services | MarkaSphere",
+    servicesMetaDesc: "Explore MarkaSphere services: visual identity, web development, social media, video editing, and marketing solutions.",
+    portfolioPageTitle: "Portfolio | MarkaSphere",
+    portfolioMetaDesc: "View MarkaSphere's portfolio of premium brand identity systems, websites, and digital experiences.",
+    insightsPageTitle: "Insights | MarkaSphere",
+    insightsMetaDesc: "Insights on brand perception, visual strategy, and digital presence from MarkaSphere.",
+    contactPageTitle: "Contact | MarkaSphere",
+    contactMetaDesc: "Get in touch with MarkaSphere to discuss your brand project with our team.",
+    notFoundPageTitle: "Page Not Found | MarkaSphere",
+    notFoundMetaDesc: "The page you are looking for could not be found. Return to the MarkaSphere homepage."
   }
 }

@@ -1,6 +1,8 @@
 export default {
   layout: {
     logo: "MarkaSphere",
+    home: "Home",
+    insights: "Insights",
     about: "About",
     services: "Services",
     work: "Work",
@@ -24,6 +26,12 @@ export default {
     heroDesc: "Your company may have real expertise, strong execution, and professional services… but what clients see first is not what happens inside the company. It is what appears from it. We build visual and marketing presence that reflects brand value with clarity and professionalism.",
     heroCtaPrimary: "Start Your Project",
     heroCtaSecondary: "View Projects",
+    whatsappHeroMessage: "I would like to start a project.",
+    whatsappBannerMessage: "I would like to start a project.",
+    whatsappClosingMessage: "I would like to start a project.",
+    whatsappServicePrefix: "I would like to request the service: ",
+    requestServiceLabel: "Request Service →",
+    whatsappButtonAria: "Open WhatsApp",
 
     problemHeadingPart1: "The problem is not always the quality of what a company offers…",
     problemHeadingPart2: "but how it appears.",
@@ -101,9 +109,19 @@ export default {
     ],
     closingCtaLabel: "Start Your Project",
     
+    // CTA Banner translations
+    ctaBannerTitle: "Ready to elevate your brand presence?",
+    ctaBannerDesc: "Start a conversation with our team.",
+    
     workBadge: "Selected Work",
     workTitle: "Strategic digital experiences designed to shape perception.",
     workDesc: "In a crowded market, brands aren't compared by services alone. They are compared by presence, impression, and delivery.",
+    trustMetrics: [
+      { value: "8+", label: "Years of Excellence" },
+      { value: "120+", label: "Projects Delivered" },
+      { value: "60+", label: "Happy Clients" },
+      { value: "98%", label: "Client Satisfaction" }
+    ],
     serviceItems: [
       {
         title: "Visual Identity",

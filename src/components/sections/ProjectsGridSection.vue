@@ -2,7 +2,7 @@
 import { ref, computed } from "vue"
 import ProjectCard from "../cards/ProjectCard.vue"
 import { useLanguage } from "../../composables/useLanguage"
-import { projects } from "../../data/projects"
+import { projects } from "../../content/data/projects"
 
 const { t } = useLanguage()
 const activeFilter = ref(null)
@@ -71,6 +71,7 @@ const resetFilter = () => {
           v-for="(project, index) in filteredProjects"
           :key="project.slug"
           :project="project"
+          :stagger-index="index"
         />
       </div>
 

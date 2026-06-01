@@ -1,7 +1,10 @@
 export default {
   insights: {
+    metaTitle: "Insights | MarkaSphere",
+    metaDesc: "Strategic articles on brand perception, presentation, and premium market positioning.",
     heroTitle: "Insights on brands… and how they appear in the market.",
     heroBody: "The way a brand appears… influences understanding, trust, impression, and decision-making.",
+    readMore: "Read More",
     articles: [
       {
         slug: "why-some-companies-appear-larger",

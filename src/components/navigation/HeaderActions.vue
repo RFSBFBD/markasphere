@@ -11,7 +11,7 @@ const { currentTheme, toggleTheme } = useTheme()
 const navToggleLabel = computed(() => t.value?.layout?.navToggleLabel)
 const themeToggleLabel = computed(() => t.value?.layout?.themeToggleLabel)
 const contactLabel = computed(() => t.value?.layout?.consultation)
-const consultUrl = computed(() => getWhatsAppUrl(currentLanguage.value === 'ar' ? 'أرغب في استشارة' : 'I would like a consultation'))
+const consultUrl = computed(() => getWhatsAppUrl(t.value?.layout?.whatsappConsultationMessage || 'I would like a consultation'))
 
 defineEmits(["toggle-mobile"])
 </script>
@@ -25,9 +25,9 @@ defineEmits(["toggle-mobile"])
       target="_blank"
       rel="noopener noreferrer"
       class="hidden sm:inline-flex glass px-3 py-2 rounded-full text-xs font-bold text-[var(--color-text)]/80 hover:text-[var(--color-text)] transition-all duration-300 mr-2"
-      aria-label="Request Consultation"
+      :aria-label="contactLabel"
     >
-      {{ currentLanguage === 'ar' ? 'استشارة مجانية' : 'Consult' }}
+      {{ contactLabel }}
     </a>
 
     <button
@@ -50,7 +50,7 @@ defineEmits(["toggle-mobile"])
     <button
       @click="$emit('toggle-mobile')"
       class="flex md:hidden flex-col justify-center items-center gap-1.5 size-10 rounded-full glass cursor-pointer transition-all duration-300"
-      aria-label="Toggle Menu"
+      :aria-label="t.value?.layout?.menuToggleLabel"
     >
       <span class="w-5 h-0.5 bg-[var(--color-text)] transition-all duration-300 origin-center" />
       <span class="w-5 h-0.5 bg-[var(--color-text)] transition-all duration-300 origin-center" />

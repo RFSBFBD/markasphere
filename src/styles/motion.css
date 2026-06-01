@@ -85,10 +85,99 @@
   }
 }
 
-/* CSS Stagger entries */
+/* CSS Stagger entries - Base timing */
 .stagger-1 { transition-delay: 100ms; }
 .stagger-2 { transition-delay: 160ms; }
 .stagger-3 { transition-delay: 220ms; }
 .stagger-4 { transition-delay: 280ms; }
 .stagger-5 { transition-delay: 340ms; }
 .stagger-6 { transition-delay: 400ms; }
+.stagger-7 { transition-delay: 460ms; }
+.stagger-8 { transition-delay: 520ms; }
+.stagger-9 { transition-delay: 580ms; }
+.stagger-10 { transition-delay: 640ms; }
+.stagger-11 { transition-delay: 700ms; }
+.stagger-12 { transition-delay: 760ms; }
+
+/* Page Route Transitions (fade + upward motion) */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: translate3d(0, -16px, 0);
+}
+
+/* Page enter/leave active state */
+.page-enter-active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Fade In utilities */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Upward Reveal animations */
+.reveal-up {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  animation: revealUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes revealUp {
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Card Stagger Container - applies stagger delays to child cards
+   Note: Works best with Reveal-wrapped cards; delays inherited by Reveal components */
+.stagger-container > * {
+  animation-delay: var(--stagger-delay, 0ms) !important;
+  transition-delay: var(--stagger-delay, 0ms) !important;
+  will-change: opacity, transform;
+}
+
+.stagger-container > :nth-child(1) { --stagger-delay: 100ms; }
+.stagger-container > :nth-child(2) { --stagger-delay: 160ms; }
+.stagger-container > :nth-child(3) { --stagger-delay: 220ms; }
+.stagger-container > :nth-child(4) { --stagger-delay: 280ms; }
+.stagger-container > :nth-child(5) { --stagger-delay: 340ms; }
+.stagger-container > :nth-child(6) { --stagger-delay: 400ms; }
+.stagger-container > :nth-child(7) { --stagger-delay: 460ms; }
+.stagger-container > :nth-child(8) { --stagger-delay: 520ms; }
+.stagger-container > :nth-child(9) { --stagger-delay: 580ms; }
+.stagger-container > :nth-child(10) { --stagger-delay: 640ms; }
+.stagger-container > :nth-child(11) { --stagger-delay: 700ms; }
+.stagger-container > :nth-child(12) { --stagger-delay: 760ms; }
+
+/* Reduced motion - disable animations globally */
+@media (prefers-reduced-motion: reduce) {
+  .page-enter-active,
+  .page-leave-active,
+  .fade-in,
+  .reveal-up,
+  .stagger-container > * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

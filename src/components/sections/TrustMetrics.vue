@@ -1,12 +1,10 @@
 <script setup>
+import { computed } from "vue"
 import Reveal from "../animations/Reveal.vue"
+import { useLanguage } from "../../composables/useLanguage"
 
-const metrics = [
-  { value: "8+", label: "Years of Excellence" },
-  { value: "120+", label: "Projects Delivered" },
-  { value: "60+", label: "Happy Clients" },
-  { value: "98%", label: "Client Satisfaction" }
-]
+const { t } = useLanguage()
+const metrics = computed(() => t.value.home.trustMetrics || [])
 </script>
 
 <template>

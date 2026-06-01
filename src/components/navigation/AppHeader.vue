@@ -1,18 +1,16 @@
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount } from "vue"
-import { useLanguage } from "../../composables/useLanguage"
+import { BRAND_NAME } from "../../config/constants"
 import NavLinks from "./NavLinks.vue"
 import HeaderActions from "./HeaderActions.vue"
 import MobileMenu from "./MobileMenu.vue"
 import Magnetic from "../animations/Magnetic.vue"
 
-const { t } = useLanguage()
-
 const isScrolled = ref(false)
 const isMounted = ref(false)
 const isMobileOpen = ref(false)
 
-const displayLogo = computed(() => t.value?.layout?.logo)
+const displayLogo = computed(() => BRAND_NAME)
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 20
@@ -50,12 +48,9 @@ onBeforeUnmount(() => {
       <Magnetic>
         <router-link
           to="/"
-          class="flex items-center gap-3 transition-all duration-700"
+          class="flex items-center transition-all duration-700"
           :class="isMounted ? 'translate-x-0 opacity-100' : '-translate-x-4 opacity-0'"
         >
-          <span class="brand-mark">
-            <span class="brand-mark-text">M</span>
-          </span>
           <span class="brand-name text-[var(--color-text)] font-semibold tracking-tight">{{ displayLogo }}</span>
         </router-link>
       </Magnetic>
@@ -72,21 +67,13 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped>
-.brand-mark {
-  width: 2.75rem;
-  height: 2.75rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 9999px;
-  background: var(--color-accent);
-  color: white;
-  font-weight: 800;
-  font-size: 0.95rem;
-}
-
 .brand-name {
   font-size: 1.1rem;
   letter-spacing: -0.02em;
+  /* Explicitly use primary font for brand name - never translates or changes */
+  font-family: var(--font-primary);
+  font-weight: 600;
+  text-transform: none;
+  direction: ltr; /* Force LTR for brand name */
 }
 </style>

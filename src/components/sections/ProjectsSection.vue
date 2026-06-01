@@ -84,7 +84,7 @@ import EmblaCarousel from "embla-carousel"
 import Reveal from "../animations/Reveal.vue"
 import ProjectCard from "../cards/ProjectCard.vue"
 import { useLanguage } from "../../composables/useLanguage"
-import { projects } from "../../data/projects"
+import { projects } from "../../content/data/projects"
 
 const { t } = useLanguage()
 

@@ -3,16 +3,25 @@
   <MainLayout>
     <RouterView v-slot="{ Component, route }">
       <Transition name="page" mode="out-in">
-        <div :key="route.fullPath" class="page-wrapper">
-          <template v-if="route.meta && route.meta.keepAlive">
-            <KeepAlive>
-              <component :is="Component" />
-            </KeepAlive>
+        <Suspense>
+          <template #default>
+            <div :key="route.fullPath" class="page-wrapper">
+              <template v-if="route.meta && route.meta.keepAlive">
+                <KeepAlive>
+                  <component :is="Component" />
+                </KeepAlive>
+              </template>
+              <template v-else>
+                <component :is="Component" />
+              </template>
+            </div>
           </template>
-          <template v-else>
-            <component :is="Component" />
+          <template #fallback>
+            <div class="page-loading">
+              <div class="loader" />
+            </div>
           </template>
-        </div>
+        </Suspense>
       </Transition>
     </RouterView>
   </MainLayout>
@@ -64,8 +73,9 @@ onMounted(() => {
 <style>
 .page-enter-active,
 .page-leave-active {
-  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
 .page-enter-from {
@@ -81,12 +91,33 @@ onMounted(() => {
 @media (prefers-reduced-motion: reduce) {
   .page-enter-active,
   .page-leave-active {
-    transition: none;
+    transition: none !important;
   }
   .page-enter-from,
   .page-leave-to {
     opacity: 0;
     transform: none;
   }
+}
+
+.page-loading {
+  min-height: calc(100vh - 8rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.loader {
+  width: 3rem;
+  height: 3rem;
+  border: 4px solid rgba(255,255,255,0.15);
+  border-top-color: rgba(255,255,255,0.85);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 </style>

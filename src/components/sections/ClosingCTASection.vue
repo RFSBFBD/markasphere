@@ -25,7 +25,7 @@
       <!-- CTA Button - WhatsApp Direct -->
       <Reveal :delay="300" :duration="1000">
         <a
-          :href="getWhatsAppUrl('أرغب في بدء مشروع')"
+          :href="getWhatsAppUrl(t.home.whatsappClosingMessage)"
           target="_blank"
           rel="noopener noreferrer"
           class="cta-button-primary"

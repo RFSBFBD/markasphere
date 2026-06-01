@@ -40,7 +40,7 @@ const { t } = useLanguage()
 
       <Reveal :delay="550">
         <div class="flex flex-wrap items-center justify-center gap-4 md:gap-6 mt-14">
-          <BaseButton variant="primary" :href="getWhatsAppUrl('أرغب في بدء مشروع')">
+          <BaseButton variant="primary" :href="getWhatsAppUrl(t.home.whatsappHeroMessage)">
             {{ t.home.heroCtaPrimary }}
           </BaseButton>
 
@@ -50,12 +50,6 @@ const { t } = useLanguage()
         </div>
       </Reveal>
     </div>
-
-    <Reveal :delay="700">
-      <div class="mt-24 text-[var(--color-text)]/20 text-xl font-light">
-        ✦
-      </div>
-    </Reveal>
   </section>
 </template>
 

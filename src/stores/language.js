@@ -26,7 +26,19 @@ export const useLanguageStore = defineStore("language", {
         prevProject: "Previous project",
         nextProject: "Next project",
         metaTitle: "MarkaSphere | Strategic Executive Brand Presence",
-        metaDesc: "Some brands are understood before they speak. MarkaSphere builds strategic digital presence designed to shape authority, perception, and premium positioning."
+        metaDesc: "Some brands are understood before they speak. MarkaSphere builds strategic digital presence designed to shape authority, perception, and premium positioning.",
+        aboutPageTitle: "About | MarkaSphere",
+        aboutMetaDesc: "Learn about MarkaSphere — a brand agency focused on visual clarity, strategic positioning, and premium digital experiences.",
+        servicesPageTitle: "Services | MarkaSphere",
+        servicesMetaDesc: "Explore MarkaSphere services: visual identity, web development, social media, video editing, and marketing solutions.",
+        portfolioPageTitle: "Portfolio | MarkaSphere",
+        portfolioMetaDesc: "View MarkaSphere's portfolio of premium brand identity systems, websites, and digital experiences.",
+        insightsPageTitle: "Insights | MarkaSphere",
+        insightsMetaDesc: "Insights on brand perception, visual strategy, and digital presence from MarkaSphere.",
+        contactPageTitle: "Contact | MarkaSphere",
+        contactMetaDesc: "Get in touch with MarkaSphere to discuss your brand project with our team.",
+        notFoundPageTitle: "Page Not Found | MarkaSphere",
+        notFoundMetaDesc: "The page you are looking for could not be found. Return to the MarkaSphere homepage."
       },
       home: {
         heroBadge: "Strategic Executive Brand Presence",
